@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/rmannibucau/cdi-spring-bridge.png)](http://travis-ci.org/rmannibucau/cdi-spring-bridge)
+
 # Goal
 
 Be able to reuse spring beans in CDI application.
@@ -21,3 +23,4 @@ Be able to reuse spring beans in CDI application.
     @Spring
     @Inject
     private SomeSpringStuff bean;
+
