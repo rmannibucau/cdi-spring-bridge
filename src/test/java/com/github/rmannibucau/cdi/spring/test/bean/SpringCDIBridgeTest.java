@@ -1,6 +1,7 @@
 package com.github.rmannibucau.cdi.spring.test.bean;
 
-import com.github.rmannibucau.cdi.spring.SpringExtension;
+import com.github.rmannibucau.cdi.spring.Spring;
+import com.github.rmannibucau.cdi.spring.internal.SpringExtension;
 import com.github.rmannibucau.cdi.spring.test.bean.bridge.AppCtxProducer;
 import com.github.rmannibucau.cdi.spring.test.bean.cdi.MyCdiBean1;
 import com.github.rmannibucau.cdi.spring.test.bean.spring.MySpringBean1;
@@ -29,6 +30,7 @@ public class SpringCDIBridgeTest {
         return ShrinkWrap.create(JavaArchive.class)
                 .addAsManifestResource(EmptyAsset.INSTANCE, ArchivePaths.create("beans.xml"))
                 .addPackage(SpringExtension.class.getPackage())
+                .addClass(Spring.class)
                 .addAsServiceProvider(Extension.class, SpringExtension.class)
                 .addPackage(AppCtxProducer.class.getPackage())
                 .addPackage(MyCdiBean1.class.getPackage())

@@ -8,7 +8,7 @@ import javax.enterprise.inject.Produces;
 
 public class AppCtxProducer {
     @Produces
-    public ConfigurableApplicationContext create() {
+    public ConfigurableApplicationContext start() {
         return new ClassPathXmlApplicationContext("app-ctx.xml");
     }
 

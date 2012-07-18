@@ -1,4 +1,4 @@
-package com.github.rmannibucau.cdi.spring;
+package com.github.rmannibucau.cdi.spring.internal;
 
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -20,8 +20,8 @@ public class SpringExtension implements Extension {
 
         // add spring beans to cdi
         for (String id : ctx.getBeanDefinitionNames()) {
-            final Class clazz = ctx.getType(id);
-            final AnnotatedType at = bm.createAnnotatedType(clazz);
+            final Class<Object> clazz = (Class<Object>) ctx.getType(id);
+            final AnnotatedType<Object> at = bm.createAnnotatedType(clazz);
             final InjectionTarget<Object> injectionTarget = bm.createInjectionTarget(at);
             abd.addBean(new SpringBean<Object>(ctx, clazz, id, injectionTarget));
         }

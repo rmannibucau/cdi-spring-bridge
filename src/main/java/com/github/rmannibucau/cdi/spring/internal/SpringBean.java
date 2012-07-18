@@ -1,5 +1,6 @@
-package com.github.rmannibucau.cdi.spring;
+package com.github.rmannibucau.cdi.spring.internal;
 
+import com.github.rmannibucau.cdi.spring.Spring;
 import org.apache.deltaspike.core.util.bean.BaseImmutableBean;
 import org.apache.deltaspike.core.util.metadata.AnnotationInstanceProvider;
 import org.springframework.beans.factory.ListableBeanFactory;
