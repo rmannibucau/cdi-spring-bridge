@@ -5,6 +5,9 @@
 Be able to reuse spring beans in CDI application.
 
 # Usage
+
+You have two ways to use this extension.
+
 ## Write an application context producer
 
     public class AppCtxProducer {
@@ -17,6 +20,13 @@ Be able to reuse spring beans in CDI application.
             ctx.close();
         }
     }
+
+Note: this is pretty useful but not portable (even if it should work on main CDI implementation
+
+## Create a specific application context
+
+Create a classpath resource called rmannibucau-spring-cdi.xml and import your spring app
+in this file. It will ignore produced ConfigurableApplicationContext and is portable.
 
 ## Inject your spring beans in your CDI beans
 
