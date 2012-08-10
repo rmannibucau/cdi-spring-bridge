@@ -17,6 +17,7 @@ import org.junit.runner.RunWith;
 import javax.enterprise.inject.spi.Extension;
 import javax.inject.Inject;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -41,5 +42,6 @@ public class SpringCDIBridgeTest {
     public void springInCdi() {
         assertNotNull(cdi);
         assertTrue(cdi.getSpring().startsWith(MySpringBean1.class.getName())); // proxy, here we depend on the cdi impl for the test
+        assertEquals("spring", cdi.bean().getProp());
     }
 }

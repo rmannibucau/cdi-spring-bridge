@@ -13,4 +13,8 @@ public class MyCdiBean1 {
     public String getSpring() {
         return spring.getClass().getName();
     }
+
+    public MySpringBean1 bean() {
+        return spring;
+    }
 }
